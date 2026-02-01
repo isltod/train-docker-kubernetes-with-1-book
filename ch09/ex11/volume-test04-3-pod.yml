@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod	
+metadata:	
+  name: nginx-volume-04	
+spec:	
+  nodeSelector:	
+    kubernetes.io/hostname: server2	
+  containers:	
+  - name: nginx-test01	
+    image: nginx:latest	
+    volumeMounts:
+    - name: nfs-pv-01
+      mountPath: /mount01
+  volumes:
+  - name: nfs-pv-01	
+    persistentVolumeClaim:
+      claimName: pvc-01
+
