@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r ./ch11/ex01/requirements.txt
 
 WORKDIR ./myapp
 
